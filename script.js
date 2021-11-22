@@ -10,7 +10,6 @@ var app = new Vue ({
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then(function (response){
                 self.push(response.data.response)
-            console.log(self);
             })
         }
         
