@@ -4,12 +4,14 @@ var app = new Vue ({
         emails: []
     },
     mounted(){
-        let self = this.emails
+        let self = this
+
+        // mi pusha 10 volte una mail generata dentro l'array dall' API di boolean
         for(let i = 0; i < 10; i++){
             axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
-            .then(function (response){
-                self.push(response.data.response)
+            .then(function (email){
+                self.emails.push(email.data.response)
             })
         }
         
